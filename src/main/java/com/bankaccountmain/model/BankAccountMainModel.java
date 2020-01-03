@@ -32,7 +32,7 @@ public class BankAccountMainModel {
 
 	  private String status;
 	  
-	  private String bankName;
+	  private Bank bank;
 	  
 	  public BankAccountMainModel() {
 		  SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss"); 
@@ -127,12 +127,11 @@ public class BankAccountMainModel {
 	    this.status = status;
 	  }
 
-	public String getBankName() {
-		return bankName;
+	public Bank getBank() {
+		return bank;
 	}
 
-	public void setBankName(String bankName) {
-		this.bankName = bankName;
-	}
-	  
+	public void setBank(Bank bank) {
+		this.bank = bank;
+	}  
 }

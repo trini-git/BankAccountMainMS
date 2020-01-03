@@ -18,7 +18,7 @@ public class CreditCardMainModel {
 	private Double creditLimit;
 	private Double avalibleAmount;
 	private String createdAt;
-	private String bankName;
+	private Bank bank;
 	
 	public CreditCardMainModel() {
 		
@@ -83,12 +83,11 @@ public class CreditCardMainModel {
 		this.type = type;
 	}
 
-	public String getBankName() {
-		return bankName;
+	public Bank getBank() {
+		return bank;
 	}
 
-	public void setBankName(String bankName) {
-		this.bankName = bankName;
-	}
-		
+	public void setBank(Bank bank) {
+		this.bank = bank;
+	}	
 }
