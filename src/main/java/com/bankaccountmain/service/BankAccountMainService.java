@@ -37,4 +37,24 @@ public class BankAccountMainService implements IBankAccountMainService {
 		return iBankAccountMainRepository.findByAccountNumber(accountNumber);
 	}
 
+	@Override
+	public Mono<BankAccountMainModel> updateAtmAmountRetire(BankAccountMainModel bankAccountMainModel) {
+		
+		return iBankAccountMainRepository.findByAccountNumber(bankAccountMainModel.getAccountNumber())
+			.flatMap(a -> {
+				a.setCurrentAmount(bankAccountMainModel.getCurrentAmount());
+				return iBankAccountMainRepository.save(a);
+			});
+	}
+
+	@Override
+	public Mono<BankAccountMainModel> updateAtmAmountDeposite(BankAccountMainModel bankAccountMainModel) {
+		
+		return iBankAccountMainRepository.findByAccountNumber(bankAccountMainModel.getAccountNumber())
+				.flatMap(a -> {
+					a.setCurrentAmount(bankAccountMainModel.getCurrentAmount());
+					return iBankAccountMainRepository.save(a);
+				});
+	}
+
 }

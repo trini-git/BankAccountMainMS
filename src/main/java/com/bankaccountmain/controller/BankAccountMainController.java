@@ -62,5 +62,21 @@ public class BankAccountMainController {
 
 	    return creditCardMainService.updateCreditAmount(creditCardMainModel);
 	}
+	
+	/*from atm microservice*/
+	
+	@PutMapping("/update-atm-amount-deposite")
+	public Mono<BankAccountMainModel> updateAtmAmountDeposite(
+	      @RequestBody BankAccountMainModel bankAccountMainModel) {
+
+	    return bankAccountMainService.updateAtmAmountDeposite(bankAccountMainModel);
+	}
+	
+	@PutMapping("/update-atm-amount-retire")
+	public Mono<BankAccountMainModel> updateAtmAmountRetire(
+	      @RequestBody BankAccountMainModel bankAccountMainModel) {
+
+	    return bankAccountMainService.updateAtmAmountRetire(bankAccountMainModel);
+	}
 		
 }

@@ -11,5 +11,9 @@ public interface IBankAccountMainService {
 	Mono<BankAccountMainModel> updateAmount(BankAccountMainModel bankAccountMainModel);
 	
 	Mono<BankAccountMainModel> findByAccountNumber(String accountNumber);
-
+	
+	/*methods for atm microservice*/
+	
+	Mono<BankAccountMainModel> updateAtmAmountRetire(BankAccountMainModel bankAccountMainModel);
+	Mono<BankAccountMainModel> updateAtmAmountDeposite(BankAccountMainModel bankAccountMainModel);
 }
